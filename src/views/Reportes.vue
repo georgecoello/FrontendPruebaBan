@@ -33,12 +33,18 @@
               <tr class="bg-green-100">
                 <th class="px-4 py-2">Fecha</th>
                 <th class="px-4 py-2">Monto</th>
+                <th class="px-4 py-2">Cliente</th>
+                <th class="px-4 py-2">Nombre</th>
+                <th class="px-4 py-2">Motivo</th>
               </tr>
             </thead>
             <tbody>
               <tr v-for="reporte in reportes" :key="reporte.id" class="border-b">
                 <td class="px-4 py-2 text-center">{{ formatFecha(reporte.fechaTransaccion) }}</td>
-                <td class="px-4 py-2 text-center">${{ reporte.montoTransaccion }}</td>
+                <td class="px-4 py-2 text-center">L. {{ reporte.montoTransaccion }}</td>
+                <td class="px-4 py-2 text-center">{{ reporte.nombre_cliente }}</td>
+                <td class="px-4 py-2 text-center">{{ reporte.nombre_agencia }}</td>
+                <td class="px-4 py-2 text-center">{{ reporte.nombre_motivo_transaccion }}</td>
               </tr>
             </tbody>
           </table>
